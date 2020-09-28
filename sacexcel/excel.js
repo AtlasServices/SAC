@@ -135,7 +135,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             var that = this;
 
-            let xlsxjs = "https://raw.githubusercontent.com/AtlasServices/SAC/master/sacexcel/xlsx.js";
+            let xlsxjs = "https://atlasservices.github.io/SAC/sacexcel/xlsx.js";
             async function LoadLibs() {
                 try {
                     await loadScript(xlsxjs, _shadowRoot);
