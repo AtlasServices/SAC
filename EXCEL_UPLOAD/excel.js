@@ -343,6 +343,8 @@
 				  var rec_count = 0;
 
 				  var len = 0;
+				  var col_name = ""
+   				  var data = {'col_id': 0};
 				  if (lengthfield != 0) {
 					for (var i = 1; i < result.split("[$@~!~@$]").length; i++) {
 					  if (result.split("[$@~!~@$]")[i].length > 0) {
@@ -369,14 +371,11 @@
 							  'col_8': rec[7].trim(),
 							  'col_9': rec[8].trim(),
 							});*/
-							var col_name = ""
-							for (z = 0; z < rec.length; z++) {
-								col_name = '' + z.toString();
-								if (z = 0) { 
-									data["col_id"] = i;
-								} else {
-									data[col_name] = rec[z].trim();
-							    	}
+							col_name = ""
+							data = {'col_id': i};
+							for (z = 1; z < rec.length; z++) {
+								col_name = "col_' + z.toString();
+								data[col_name] = rec[z].trim();
 							}
 							result_final.push(data);
 						  }
