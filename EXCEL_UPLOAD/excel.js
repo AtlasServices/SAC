@@ -344,7 +344,7 @@
 
 				  var len = 0;
 				  var col_name = ""
-   				  var data = {'col_id': 0};
+   				  var data = {};
 				  if (lengthfield != 0) {
 					for (var i = 1; i < result.split("[$@~!~@$]").length; i++) {
 					  if (result.split("[$@~!~@$]")[i].length > 0) {
@@ -358,7 +358,6 @@
 						}
 						if (len > 0) {
 							rec_count = rec_count + 1;
-							var data = {};
 							/*result_final.push({
 							  'col_id': i,
 							  'col_1': rec[0].trim(),
@@ -373,8 +372,8 @@
 							});*/
 							col_name = ""
 							data = {'col_id': i};
-							for (z = 1; z < rec.length; z++) {
-								col_name = "col_' + z.toString();
+							for (z = 0; z < rec.length; z++) {
+								col_name = "col_' + (z + 1).toString();
 								data[col_name] = rec[z].trim();
 							}
 							result_final.push(data);
