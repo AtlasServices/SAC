@@ -364,7 +364,6 @@
 							  'col_7': rec[6].trim(),
 							  'col_8': rec[7].trim(),
 							  'col_9': rec[8].trim(),
-							  'col_10': rec[9].trim(),
 							});
 						  }
 						}
