@@ -353,7 +353,8 @@
 							5].trim().length + rec[6].trim().length + rec[7].trim().length + rec[8].trim().length;
 						  if (len > 0) {
 							rec_count = rec_count + 1;
-							result_final.push({
+							var data = {};
+							/*result_final.push({
 							  'col_id': i,
 							  'col_1': rec[0].trim(),
 							  'col_2': rec[1].trim(),
@@ -363,8 +364,18 @@
 							  'col_6': rec[5].trim(),
 							  'col_7': rec[6].trim(),
 							  'col_8': rec[7].trim(),
-							  //'col_9': rec[8].trim(),
-							});
+							  'col_9': rec[8].trim(),
+							});*/
+							var col_name = ""
+							for (var z = 0; z < rec.length; z++) {
+								col_name = '' + z.toString();
+								if (z = 0) { 
+									data["col_id"] = i;
+								} else {
+									data[col_name] = rec[z].trim();
+							    	};
+							}
+							result_final.push(data);
 						  }
 						}
 					  }
