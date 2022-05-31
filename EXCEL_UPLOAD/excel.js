@@ -363,7 +363,7 @@
 							  'col_6': rec[5].trim(),
 							  'col_7': rec[6].trim(),
 							  'col_8': rec[7].trim(),
-							  'col_9': rec[8].trim(),
+							  //'col_9': rec[8].trim(),
 							});
 						  }
 						}
