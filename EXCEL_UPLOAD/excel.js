@@ -325,7 +325,7 @@
 				var correctsheet = false;
 
 				workbook.SheetNames.forEach(function(sheetName) {
-				  if (sheetName === this._export_settings.footer) {
+				  if (sheetName === that._export_settings.footer) {
 					correctsheet = true;
 					var csv = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName]);
 					if (csv.length) {
