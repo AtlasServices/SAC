@@ -349,10 +349,12 @@
 
 						var rec = result.split("[$@~!~@$]")[i].split("[#@~!~@#]");
 						if (rec.length > 0) {
-						  len = 'nothing';
-							// rec[0].trim().length + rec[1].trim().length + rec[2].trim().length + rec[3].trim().length + rec[4].trim().length + rec[
-							//5].trim().length + rec[6].trim().length + rec[7].trim().length + rec[8].trim().length;
-						  if (len > 0) {
+						  /*len =  rec[0].trim().length + rec[1].trim().length + rec[2].trim().length + rec[3].trim().length + rec[4].trim().length + rec[
+							5].trim().length + rec[6].trim().length + rec[7].trim().length + rec[8].trim().length; */
+						for (var z = 0; z < rec.length; z++) {
+							len += rec[z].trim().length;
+						}
+						if (len > 0) {
 							rec_count = rec_count + 1;
 							var data = {};
 							/*result_final.push({
@@ -368,13 +370,13 @@
 							  'col_9': rec[8].trim(),
 							});*/
 							var col_name = ""
-							for (var z = 0; z < rec.length; z++) {
+							for (z = 0; z < rec.length; z++) {
 								col_name = '' + z.toString();
 								if (z = 0) { 
 									data["col_id"] = i;
 								} else {
 									data[col_name] = rec[z].trim();
-							    	};
+							    	}
 							}
 							result_final.push(data);
 						  }
